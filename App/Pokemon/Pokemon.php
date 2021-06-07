@@ -25,7 +25,7 @@ class Pokemon {
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getName(): string
     {
