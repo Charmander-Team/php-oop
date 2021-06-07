@@ -14,6 +14,7 @@ class Pokemon {
      * @param string $location
      * @param string $type
      * @param int $pv
+     * @param bool $hasEvolve
      */
     public function __construct(string $name, string $location, string $type, int $pv, bool $hasEvolve) {
         $this->name = $name;
@@ -54,7 +55,6 @@ class Pokemon {
     {
         $this->location = $location;
     }
-
 
     /**
      * @return string
