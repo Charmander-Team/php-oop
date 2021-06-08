@@ -10,7 +10,7 @@ require "Database/general.php";
 // $version = $stm->fetch();
 
 // echo $version[0] . PHP_EOL;
-
+// test
 //$Salameche = new Pokemon("Salameche","Chelles","Feu",50,true);
 $Salameche = new Pokemon();
 $Salameche->setId(2);
