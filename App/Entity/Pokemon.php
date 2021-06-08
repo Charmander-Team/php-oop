@@ -8,7 +8,7 @@ class Pokemon {
     private $location;
     private $type;
     private $pv;
-    private $hasEvolve;
+    private $image;
 
     /**
      * Pokemon constructor.
@@ -16,7 +16,7 @@ class Pokemon {
      * @param string $location
      * @param string $type
      * @param int $pv
-     * @param bool $hasEvolve
+     * @param string $image
      */
     public function __construct() {
 
@@ -96,19 +96,19 @@ class Pokemon {
     }
 
     /**
-     * @return bool
+     * @return string
      */
-    public function isHasEvolve(): bool
+    public function getImage(): string
     {
-        return $this->hasEvolve;
+        return $this->image;
     }
 
     /**
      * @param bool $hasEvolve
      */
-    public function setHasEvolve(bool $hasEvolve): void
+    public function setImage(string $image): void
     {
-        $this->hasEvolve = $hasEvolve;
+        $this->image = $image;
     }
 
 }
