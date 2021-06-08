@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Entity;
+
 class Pokemon {
     
     private $name;
@@ -16,12 +18,17 @@ class Pokemon {
      * @param int $pv
      * @param bool $hasEvolve
      */
-    public function __construct(string $name, string $location, string $type, int $pv, bool $hasEvolve) {
-        $this->name = $name;
-        $this->location = $location;
-        $this->type = $type;
-        $this->pv = $pv;
-        $this->hasEvolve = $hasEvolve;
+    public function __construct() {
+
+    }
+
+    public function hydrate(array $pokemon){
+        foreach($pokemon as $key => $value){
+            $method = "set". ucfirst($key);
+            if(method_exists($this, $method)){
+                $this->$method($value);
+            }
+        }
     }
 
     /**
