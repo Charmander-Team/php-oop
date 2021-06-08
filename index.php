@@ -11,6 +11,13 @@ require "Database/general.php";
 
 // echo $version[0] . PHP_EOL;
 
-$test = new Test();
-$test->personneId = 22;
-$test-> Ajouter();
+//$Salameche = new Pokemon("Salameche","Chelles","Feu",50,true);
+$Salameche = new Pokemon();
+$Salameche->setId(2);
+$Salameche->setName("Salameche");
+$Salameche->setLocation("Chelles");
+$Salameche->setType("Feu");
+$Salameche->setPv(50);
+$Salameche->setHasEvolve(true);
+$Salameche->setImage("http://test.png");
+$Salameche-> Ajouter();
