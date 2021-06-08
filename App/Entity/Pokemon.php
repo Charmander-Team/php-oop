@@ -60,39 +60,39 @@ class Pokemon {
     }
 
     /**
-     * @param mixed $location
+     * @param string $location
      */
-    public function setLocation($location): void
+    public function setLocation(string $location): void
     {
         $this->location = $location;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
 
     /**
-     * @param mixed $type
+     * @param string $type
      */
-    public function setType($type): void
+    public function setType(string $type): void
     {
         $this->type = $type;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getHp()
+    public function getHp(): int
     {
         return $this->hp;
     }
 
     /**
-     * @param mixed $pv
+     * @param int $hp
      */
     public function setHp($hp): void
     {

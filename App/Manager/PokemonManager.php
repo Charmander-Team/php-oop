@@ -2,7 +2,7 @@
 
 namespace App\Manager;
 
-use App\DB\Database;
+use Vendor\DB\Database;
 use App\Entity\Pokemon;
 
 class PokemonManager

@@ -1,11 +1,11 @@
 <?php
-namespace App\DB;
+namespace Vendor\DB;
 
 class Database {
 
     private $dbUser = "root";
-    private $dbPass = "root";
-    private $host = "localhost:8889";
+    private $dbPass = "test";
+    private $host = "localhost";
     private $dbName = "oop_pokemon";
     private $pdo;
 

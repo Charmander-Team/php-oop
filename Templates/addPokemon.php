@@ -17,11 +17,11 @@
         </div>
         <div class="form-group">
             <label for="content" class="form-label">Location: </label>
-            <input type="text" class="form-control" name="location" id="location" value="kanto">
+            <input type="text" class="form-control" name="location" id="location" placeholder="kanto">
         </div>
         <div class="form-group">
             <label for="categorie" class="form-label">Type: </label>
-            <input type="number" class="form-control" name="type" id="type" placeholder="lightning">
+            <input type="text" class="form-control" name="type" id="type" placeholder="lightning">
         </div>
         <div class="form-group">
             <label for="user" class="form-label">HP: </label>
