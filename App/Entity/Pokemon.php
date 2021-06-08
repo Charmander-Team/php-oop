@@ -4,13 +4,13 @@ namespace App\Entity;
 
 class Pokemon {
 
-    private $id;
+    private int $id;
     private $name;
-    private $location;
-    private $type;
-    private $hp;
-    private $hasEvolve;
-    private $image;
+    private string $location;
+    private string $type;
+    private int $hp;
+    private int $hasEvolve;
+    private string $image;
 
     public function __construct()
     {
@@ -44,17 +44,17 @@ class Pokemon {
     }
 
     /**
-     * @param mixed $name
+     * @param string $name
      */
-    public function setName($name): void
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getLocation()
+    public function getLocation(): string
     {
         return $this->location;
     }
@@ -94,39 +94,39 @@ class Pokemon {
     /**
      * @param int $hp
      */
-    public function setHp($hp): void
+    public function setHp(int $hp): void
     {
         $this->hp = $hp;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getHasEvolve()
+    public function getHasEvolve(): int
     {
         return $this->hasEvolve;
     }
 
     /**
-     * @param mixed $hasEvolve
+     * @param int $hasEvolve
      */
-    public function setHasEvolve($hasEvolve): void
+    public function setHasEvolve(int $hasEvolve): void
     {
         $this->hasEvolve = $hasEvolve;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getImage()
+    public function getImage(): string
     {
         return $this->image;
     }
 
     /**
-     * @param mixed $image
+     * @param string $image
      */
-    public function setImage($image): void
+    public function setImage(string $image): void
     {
         $this->image = $image;
     }
