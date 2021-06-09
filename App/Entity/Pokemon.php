@@ -4,13 +4,14 @@ namespace App\Entity;
 
 class Pokemon {
 
-    private int $id;
+    // The whole team does not have php at least 7.4
+    private /*int*/ $id;
     private $name;
-    private string $location;
-    private string $type;
-    private int $hp;
-    private int $hasEvolve;
-    private string $image;
+    private /*string*/ $location;
+    private /*string*/ $type;
+    private /*int*/ $hp;
+    private /*int*/ $hasEvolve;
+    private /*string*/ $image;
 
     public function __construct()
     {
