@@ -11,8 +11,6 @@ class ViewController{
     }
 
     public function allPokemonsView($param){
-        $pokemons = new PokemonManager;
-        $pokemons->getList();
         $type = $param;
         include ROOT."\src\View\allPokemonsView.php";
     }
