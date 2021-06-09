@@ -8,6 +8,7 @@ Vendor\Autoload::register();
 use App\Entity\Pokemon;
 use App\Manager\PokemonManager;
 use App\Manager\UserManager;
+use App\Manager\BlogManager;
 
 $pokemonManager = new PokemonManager();
 var_dump($pokemonManager->getList());
@@ -15,6 +16,12 @@ echo "<br>";echo "<br>";echo "<br>";
 
 $userManager = new UserManager();
 var_dump($userManager->getList());
+echo "<br>";echo "<br>";echo "<br>";
+
+$blogManager = new BlogManager();
+var_dump($blogManager->getList());
+echo "<br>";echo "<br>";echo "<br>";
+
 if (!empty($_POST)) {
 
     // To convert string in int
