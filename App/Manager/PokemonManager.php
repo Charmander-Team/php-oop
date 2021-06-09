@@ -2,32 +2,15 @@
 
 namespace App\Manager;
 
-use Vendor\DB\Database;
-use App\Entity\Pokemon;
+use Vendor\Manager\Manager;
 
-class PokemonManager
+class PokemonManager extends Manager
 {
 
-    private $db;
+    protected $db;
+    protected $table = "pokemon";
 
-    public function __construct()
-    {
-        $db = new Database();
-        $this->setDb($db->getPdo());
-    }
-
-    private function setDb(\PDO $db)
-    {
-        $this->db = $db;
-    }
-
-    public function getPokemons ()
-    {
-        $query = $this->db->query("SELECT * FROM pokemon");
-        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\Pokemon");
-    }
-
-    public function savePokemon (Pokemon $pokemon)
+    public function create ($pokemon)
     {
         $statement = "INSERT INTO pokemon (name, location, type, hp, hasEvolve, image)
                      VALUES(:name, :location, :type, :hp, :hasEvolve, :image)";
@@ -42,5 +25,19 @@ class PokemonManager
         $prepare->bindValue(":image", $pokemon->getImage());
 
         $prepare->execute();
+    }
+    public function getOne()
+    {
+
+    }
+
+    public function update()
+    {
+
+    }
+
+    public function delete()
+    {
+
     }
 }

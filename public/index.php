@@ -9,7 +9,7 @@ use App\Entity\Pokemon;
 use App\Manager\PokemonManager;
 
 $pokemonManager = new PokemonManager();
-var_dump($pokemonManager->getPokemons());
+var_dump($pokemonManager->getList());
 
 if (!empty($_POST)) {
 
@@ -22,7 +22,7 @@ if (!empty($_POST)) {
     $pokemon = new Pokemon();
     $manager = new PokemonManager();
     $pokemon->hydrate($_POST);
-    $manager->savePokemon($pokemon);
+    $manager->create($pokemon);
 } else {
     require ROOT."/Templates/addPokemon.php";
 }
