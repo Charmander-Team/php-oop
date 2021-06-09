@@ -28,7 +28,8 @@ class PokemonManager extends Manager
     }
     public function getOne()
     {
-
+        // $query = $this->db->query("SELECT * FROM $this->table WHERE id=:id");
+        // return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));   
     }
 
     public function update()

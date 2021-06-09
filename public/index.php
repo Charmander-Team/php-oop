@@ -9,8 +9,23 @@ use App\Entity\Pokemon;
 use App\Manager\PokemonManager;
 
 $pokemonManager = new PokemonManager();
-var_dump($pokemonManager->getList());
-
+//var_dump($pokemonManager->getList());
+?>
+<table border="1">
+<?php
+foreach ($pokemonManager->getList() as $value){ ?>
+    <tr>
+        <td><?php echo $value->getId(); ?></td>
+        <td><a href="index.php?id=<?php echo $value->getId(); ?>"><?php echo $value->getName(); ?></a></td>
+        <td><?php echo $value->getLocation(); ?></td>
+        <td><?php echo $value->getType(); ?></td>
+        <td><?php echo $value->getHp(); ?></td>
+        <td><?php echo $value->getHasEvolve(); ?></td>
+        <td><?php echo $value->getImage(); ?></td>
+    </tr>
+<?php } ?>
+</tabble>
+<?php
 if (!empty($_POST)) {
 
     // To convert string in int
