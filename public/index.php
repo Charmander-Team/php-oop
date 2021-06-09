@@ -7,10 +7,14 @@ Vendor\Autoload::register();
 
 use App\Entity\Pokemon;
 use App\Manager\PokemonManager;
+use App\Manager\UserManager;
 
 $pokemonManager = new PokemonManager();
 var_dump($pokemonManager->getList());
+echo "<br>";echo "<br>";echo "<br>";
 
+$userManager = new UserManager();
+var_dump($userManager->getList());
 if (!empty($_POST)) {
 
     // To convert string in int
