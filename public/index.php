@@ -1,19 +1,15 @@
 <?php
 
-use Vendor\DB\Database;
-use Vendor\Autoload;
+define("ROOT", dirname(__DIR__));
 
-require "Vendor/Autoload.php";
-Autoload::register();
-
-define("ROOT", __DIR__);
-
+require ROOT."/Vendor/Autoload.php";
+Vendor\Autoload::register();
 
 use App\Entity\Pokemon;
 use App\Manager\PokemonManager;
 
-/*$pokemonManager = new PokemonManager();
-var_dump($pokemonManager->getPokemons());*/
+$pokemonManager = new PokemonManager();
+var_dump($pokemonManager->getPokemons());
 
 if (!empty($_POST)) {
 
@@ -28,5 +24,5 @@ if (!empty($_POST)) {
     $pokemon->hydrate($_POST);
     $manager->savePokemon($pokemon);
 } else {
-    require "Templates/addPokemon.php";
+    require ROOT."/Templates/addPokemon.php";
 }

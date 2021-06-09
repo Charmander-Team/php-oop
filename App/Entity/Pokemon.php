@@ -17,12 +17,15 @@ class Pokemon {
         $this->upperTitle = strtoupper($this->getName());
     }
 
-    public function hydrate (array $pokemon)
+    /**
+     * @param array $pokemons
+     */
+    public function hydrate (array $pokemons)
     {
-        foreach ($pokemon as $key => $value) {
+        foreach ($pokemons as $key => $pokemon) {
             $method = "set". ucfirst($key);
             if(method_exists($this, $method)){
-                $this->$method($value);
+                $this->$method($pokemon);
             }
         }
     }

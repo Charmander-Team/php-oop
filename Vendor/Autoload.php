@@ -12,7 +12,7 @@ class Autoload {
     public static function autoloader ($class)
     {
         $class = str_replace("\\", "/", $class);
-        require "$class.php";
+        require ROOT."/$class.php";
     }
 
     /**
