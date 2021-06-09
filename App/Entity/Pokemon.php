@@ -13,10 +13,10 @@ class Pokemon {
     private /*int*/ $hasEvolve;
     private /*string*/ $image;
 
-    public function __construct()
+/*    public function __construct()
     {
         $this->upperTitle = strtoupper($this->getName());
-    }
+    }*/
 
     /**
      * @param array $pokemons
@@ -138,18 +138,18 @@ class Pokemon {
     /**
      * @return string
      */
-    public function getUpperTitle(): string
+/*    public function getUpperTitle(): string
     {
         return $this->upperTitle;
-    }
+    }*/
 
     /**
      * @param string $upperTitle
      */
-    public function setUpperTitle(string $upperTitle): void
+ /*   public function setUpperTitle(string $upperTitle): void
     {
         $this->upperTitle = $upperTitle;
-    }
+    }*/
 
 
 }
