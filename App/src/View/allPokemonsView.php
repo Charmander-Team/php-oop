@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Tous les pokemons !</h1>
-    <?= $type = "EAU";  ?>
+    <?= $type ?>
+
+    
+
 </body>
 </html>
