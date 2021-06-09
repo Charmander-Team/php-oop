@@ -6,7 +6,7 @@ class User {
 
     // The whole team does not have php at least 7.4
     private /*int*/ $id;
-    private $username;
+    private /*string*/ $username;
     private /*string*/ $password;
     private /*int*/ $admin;
 
