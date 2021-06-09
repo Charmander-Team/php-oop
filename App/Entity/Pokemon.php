@@ -4,13 +4,13 @@ namespace App\Entity;
 
 class Pokemon {
 
-    private int $id;
+    private $id;
     private $name;
-    private string $location;
-    private string $type;
-    private int $hp;
-    private int $hasEvolve;
-    private string $image;
+    private $location;
+    private $type;
+    private $hp;
+    private $hasEvolve;
+    private $image;
 
     public function __construct()
     {
