@@ -8,9 +8,9 @@ interface ManagerInterface {
 
     public function getList();
 
-    public function getOne();
+    public function getOne($id);
 
     public function update();
 
-    public function delete();
+    public function delete($id);
 }

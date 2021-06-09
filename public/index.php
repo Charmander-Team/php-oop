@@ -16,16 +16,37 @@ $pokemonManager = new PokemonManager();
 foreach ($pokemonManager->getList() as $value){ ?>
     <tr>
         <td><?php echo $value->getId(); ?></td>
-        <td><a href="index.php?id=<?php echo $value->getId(); ?>"><?php echo $value->getName(); ?></a></td>
+        <td><a href="index.php?action=voir&id=<?php echo $value->getId(); ?>"><?php echo $value->getName(); ?></a></td>
         <td><?php echo $value->getLocation(); ?></td>
         <td><?php echo $value->getType(); ?></td>
         <td><?php echo $value->getHp(); ?></td>
         <td><?php echo $value->getHasEvolve(); ?></td>
         <td><?php echo $value->getImage(); ?></td>
+        <td><a href="index.php?action=update&id=<?php echo $value->getId(); ?>">Update</a></td>
+        <td><a href="index.php?action=delete&id=<?php echo $value->getId(); ?>">Delete</a></td>
     </tr>
 <?php } ?>
 </tabble>
+<table border="1">
 <?php
+
+if(!empty($_GET) && $_GET["action"]==="voir"){
+    foreach ($pokemonManager->getOne($_GET["id"]) as $value){ ?>
+        <tr>
+            <td><?php echo $value->getId(); ?></td>
+            <td><a href="index.php?id=<?php echo $value->getId(); ?>"><?php echo $value->getName(); ?></a></td>
+            <td><?php echo $value->getLocation(); ?></td>
+            <td><?php echo $value->getType(); ?></td>
+            <td><?php echo $value->getHp(); ?></td>
+            <td><?php echo $value->getHasEvolve(); ?></td>
+            <td><?php echo $value->getImage(); ?></td>
+        </tr>
+    <?php } 
+}?>
+    </table>
+<?php
+
+
 if (!empty($_POST)) {
 
     // To convert string in int
@@ -41,3 +62,14 @@ if (!empty($_POST)) {
 } else {
     require ROOT."/Templates/addPokemon.php";
 }
+
+
+if(!empty($_GET) && $_GET["action"]==="delete"){
+    $pokemonManager->delete($_GET["id"]);
+}
+
+
+// if(!empty($_GET) && $_GET["action"]==="update"){
+//     $pokemonManager->getOne($_GET["id"]);
+
+// }
