@@ -9,6 +9,7 @@ use App\Entity\Pokemon;
 use App\Manager\PokemonManager;
 use App\Manager\UserManager;
 use App\Manager\BlogManager;
+use App\Manager\ProductManager;
 
 $pokemonManager = new PokemonManager();
 var_dump($pokemonManager->getList());
@@ -20,6 +21,10 @@ echo "<br>";echo "<br>";echo "<br>";
 
 $blogManager = new BlogManager();
 var_dump($blogManager->getList());
+echo "<br>";echo "<br>";echo "<br>";
+
+$productManager = new ProductManager();
+var_dump($productManager->getList());
 echo "<br>";echo "<br>";echo "<br>";
 
 if (!empty($_POST)) {
