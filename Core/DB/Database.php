@@ -1,7 +1,8 @@
 <?php
 namespace Core\DB;
 
-class Database {
+class Database
+{
 
     private $dbUser = "root";
     private $dbPass = "test";
@@ -13,7 +14,7 @@ class Database {
     {
         $this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbName", $this->dbUser, $this->dbPass, [
             \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-            // Use for display special character on view 
+            // Use for display special character on view
             \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
         ]);
     }
@@ -23,7 +24,3 @@ class Database {
         return $this->pdo;
     }
 }
-
-$this->pdo = new \PDO("mysql:host=$this->host;dbname=$this->dbName", $this->dbUser, $this->dbPass, [
-    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
-]);

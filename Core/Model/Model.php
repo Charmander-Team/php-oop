@@ -16,7 +16,7 @@ abstract class Model implements ModelInterface{
         $this->db = $db->getPdo();
     }
 
-    // public abstract function create($article);
+    // public function create($article);
 
     public function getList()
     {
@@ -24,9 +24,20 @@ abstract class Model implements ModelInterface{
         return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
     }
 
-    // public abstract function getOne();
+    public function getOne($id)
+    {
+        $prepare = $this->db->prepare("SELECT * FROM $this->table WHERE id=:id");
+        $prepare->bindValue(":id", $id);
+        $prepare->execute();
+        return $prepare->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
+    }
 
-    // public abstract function update();
+    // public function update();
 
-    // public abstract function delete();
+    public function delete($id)
+    {
+        $prepare = $this->db->prepare("DELETE FROM $this->table WHERE id=:id");
+        $prepare->bindValue(":id", $id);
+        $prepare->execute();
+    }
 }

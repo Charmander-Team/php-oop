@@ -23,18 +23,11 @@ class UserModel extends Model
 
         $prepare->execute();
     }
-    public function getOne()
-    {
-
-    }
 
     public function update()
     {
 
     }
 
-    public function delete()
-    {
 
-    }
 }
