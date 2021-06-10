@@ -2,7 +2,7 @@
 
 define("ROOT", dirname(__DIR__));
 
-require ROOT . "/Core/Autoload.php";
+require ROOT . "/Core/OldAutoload.php";
 Core\Autoload::register();
 
 use App\Entity\Pokemon;

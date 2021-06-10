@@ -1,7 +1,7 @@
 <?php
 namespace Core;
 
-class Autoload {
+class testAutoload {
     
     /**
      * Méthode qui charge les class
