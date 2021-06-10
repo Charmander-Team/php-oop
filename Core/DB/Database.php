@@ -5,7 +5,7 @@ class Database
 {
 
     private $dbUser = "root";
-    private $dbPass = "test";
+    private $dbPass = "";
     private $host = "localhost";
     private $dbName = "oop_pokemon";
     private $pdo;

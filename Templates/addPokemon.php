@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form action="../index.php" class="form" method="POST">
+    <form class="form" method="POST">
         <div class="form-group">
             <label for="name" class="form-label">Name:</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="pikachu">

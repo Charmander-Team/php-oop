@@ -23,6 +23,10 @@ class PokemonController extends DefaultController{
     public function addPokemon(/* $data */)
     {
         if (!empty($_POST)) {
+            $_POST["hp"] = (int)$_POST["hp"];
+
+            // To convert checkbox into boolean for DB
+            ($_POST["hasEvolve"] == "on") ? ($_POST["hasEvolve"] = 1) : ($_POST["hasEvolve"] = 0);
             $pokemon = new Pokemon();
             $pokemon->hydrate($_POST);
             $this->manager->create($pokemon);
