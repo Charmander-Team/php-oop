@@ -14,6 +14,8 @@ use App\Manager\ProductManager;
 $pokemonManager = new PokemonManager();
 var_dump($pokemonManager->getList());
 echo "<br>";echo "<br>";echo "<br>";
+//var_dump($pokemonManager->getListByType('fire'));
+//echo "<br>";echo "<br>";echo "<br>";
 
 $userManager = new UserManager();
 var_dump($userManager->getList());
@@ -29,7 +31,7 @@ echo "<br>";echo "<br>";echo "<br>";
 
 if (!empty($_POST)) {
 
-    // To convert string in int
+/*    // To convert string in int
     $_POST["hp"] = (int)$_POST["hp"];
 
     // To convert checkbox into boolean for DB
@@ -38,7 +40,14 @@ if (!empty($_POST)) {
     $pokemon = new Pokemon();
     $manager = new PokemonManager();
     $pokemon->hydrate($_POST);
-    $manager->create($pokemon);
+    $manager->create($pokemon);*/
+
+    echo $_POST['type'];
+    echo "<br>";
+    var_dump($pokemonManager->getListByType('fire'));
+
+
 } else {
-    require ROOT."/Templates/addPokemon.php";
+    //require ROOT."/Templates/addPokemon.php";
+    require ROOT."/Templates/filterPokemonByType.php";
 }

@@ -40,4 +40,11 @@ class PokemonManager extends Manager
     {
 
     }
+
+    public function getListByType($type)
+    {
+        $query = $this->db->query("SELECT * FROM $this->table WHERE type = '$type'");
+        return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
+    }
+
 }
