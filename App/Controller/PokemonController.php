@@ -44,6 +44,14 @@ class PokemonController extends DefaultController{
         $this->render("indexViewPokemon", [
             "pokemons" => $pokemons
         ]);
+
+        /**
+         * a mettre en place VENDREDI MATIN
+         */
+/*        if(!empty($_GET) && $_GET["action"]==="delete"){
+            var_dump("coucou");die();
+            $pokemonModel->delete($_GET["id"]);
+        }*/
     }
 /*    public function getAllArticles ()
     {

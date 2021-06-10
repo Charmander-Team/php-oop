@@ -19,7 +19,6 @@
                 <td><?php echo $pokemon->getHp(); ?></td>
                 <td><?php echo $pokemon->getHasEvolve(); ?></td>
                 <td><img src="<?php echo $pokemon->getImage(); ?>" width="100" alt=""></td>
-                <!--<td><a href="/?page=allPokemons/?action=update&id=<?php /*echo $pokemon->getId(); */?>">Update</a></td>-->
                 <td><a href="/?page=allPokemons/?action=delete&id=<?php echo $pokemon->getId(); ?>">Delete</a></td>
             </tr>
 
@@ -27,28 +26,37 @@
 
 </table>
 
-<form class="form" method="POST">
+<!--<table border="1">
+    <?php
+/**
+ * A METTRE EN PLACE VENDREDI MATIN
+ */
+/*    if(!empty($_GET) && $_GET["action"]==="voir"){
+        foreach ($pokemonModel->getOne($_GET["id"]) as $value){ */?>
+            <tr>
+                <td><?php /*echo $value->getId(); */?></td>
+                <td><a href="index.php?id=<?php /*echo $value->getId(); */?>"><?php /*echo $value->getName(); */?></a></td>
+                <td><?php /*echo $value->getLocation(); */?></td>
+                <td><?php /*echo $value->getType(); */?></td>
+                <td><?php /*echo $value->getHp(); */?></td>
+                <td><?php /*echo $value->getHasEvolve(); */?></td>
+                <td><?php /*echo $value->getImage(); */?></td>
+            </tr>
+        <?php /*}
+    }*/?>
+</table>
+?>-->
+<br><br><br>
+<?php
+include('filterPokemonByType.php')
+?>
 
-    <div class="form-group">
-        <label for="type" class="form-label">Type:</label>
-        <select name="type" id="type">
-            <option value="" disabled>--Select type--</option>
-            <option value="fire">Fire</option>
-            <option value="water">Water</option>
-            <option value="lightning">Lightning</option>
-        </select>
-    </div>
-
-    <button class="btn btn-primary">Submit</button>
-
-    <br>
-    <?php if (!empty($_POST)) { ?>
-        <div><?php echo strtoupper($_POST['type']) ?></div>
+<?php if (!empty($_POST)) { ?>
+    <div><?php echo strtoupper($_POST['type']) ?></div>
 
     <?php var_dump($pokemons = $this->manager->getListByType($_POST['type']));
-    }
-    ?>
-</form>
+}
+?>
 
 <!--<a href="http://localhost/projets/php-oop/public/index.php/?page=addPokemon">Ajouter un Pokemon</a>
 <a href="http://localhost/projets/php-oop/public/index.php/?page=blog">Blog</a>
