@@ -2,7 +2,9 @@
 namespace App\Controller;
 
 use App\Entity\Pokemon;
+use App\Model\BlogModel;
 use App\Model\PokemonModel;
+use App\Model\ProductModel;
 use Core\Controller\DefaultController;
 
 class PokemonController extends DefaultController{
@@ -35,9 +37,19 @@ class PokemonController extends DefaultController{
         $this->render("addPokemon");
     }
 
-    public function test ($param)
+    public function getAllArticles ()
     {
-        extract($param);
-        //var_dump($id);
+        $blogModel = new BlogModel;
+        $blogs = $blogModel->getList();
+
+        $this->render("blogView", ["blogs" => $blogs]);
+    }
+
+    public function getAllProducts ()
+    {
+        $productModel = new ProductModel;
+        $products = $productModel->getList();
+
+        $this->render("productsView", ["products" => $products]);
     }
 }
