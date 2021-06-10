@@ -2,7 +2,9 @@
 
 use App\Controller\PokemonController;
 
-$_GET["page"] = "home";
+if(!isset($_GET["page"])) {
+    $_GET["page"] = "home";
+}
 
 switch ($_GET["page"]) {
     case 'addPokemon':
