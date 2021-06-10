@@ -14,7 +14,7 @@ class PokemonController extends DefaultController{
 
     public function home()
     {
-        $articles = $this->manager->getList();
+        $pokemons = $this->manager->getList();
         $this->render("indexView", [
             "pokemons" => $pokemons
         ]);
