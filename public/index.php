@@ -2,8 +2,8 @@
 
 define("ROOT", dirname(__DIR__));
 
-require ROOT."/Vendor/Autoload.php";
-Vendor\Autoload::register();
+require ROOT . "/Core/Autoload.php";
+Core\Autoload::register();
 
 use App\Entity\Pokemon;
 use App\Model\PokemonModel;
@@ -44,7 +44,7 @@ if (!empty($_POST)) {
 
     echo $_POST['type'];
     echo "<br>";
-    var_dump($pokemonModel->getListByType('fire'));
+    var_dump($pokemonModel->getListByType($_POST['type']));
 
 
 } else {

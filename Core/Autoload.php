@@ -1,5 +1,5 @@
 <?php
-namespace Vendor;
+namespace Core;
 
 class Autoload {
     

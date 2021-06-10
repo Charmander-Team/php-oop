@@ -1,8 +1,8 @@
 <?php
-namespace Vendor\Model;
+namespace Core\Model;
 
-use Vendor\DB\Database;
-use Vendor\Interfaces\ModelInterface;
+use Core\DB\Database;
+use Core\Interfaces\ModelInterface;
 
 abstract class Model implements ModelInterface{
 
