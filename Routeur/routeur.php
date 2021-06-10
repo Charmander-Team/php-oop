@@ -15,6 +15,14 @@ switch ($_GET["page"]) {
         $controller = new PokemonController();
         $controller->home();
         break;
+    case 'blog':
+        $controller = new PokemonController();
+        $controller->getAllArticles();
+        break;
+    case 'products':
+        $controller = new PokemonController();
+        $controller->getAllProducts();
+        break;
 
     default:
         break;
