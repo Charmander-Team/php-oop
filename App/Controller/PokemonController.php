@@ -16,10 +16,11 @@ class PokemonController extends DefaultController{
 
     public function home()
     {
-        $pokemons = $this->manager->getList();
+/*        $pokemons = $this->manager->getList();
         $this->render("indexView", [
             "pokemons" => $pokemons
-        ]);
+        ]);*/
+        $this->render("home");
     }
 
     public function addPokemon(/* $data */)
@@ -32,12 +33,19 @@ class PokemonController extends DefaultController{
             $pokemon = new Pokemon();
             $pokemon->hydrate($_POST);
             $this->manager->create($pokemon);
-            $this->redirectToRoute("home");
+            $this->redirectToRoute("allPokemons");
         }
         $this->render("addPokemon");
     }
 
-    public function getAllArticles ()
+    public function allPokemons(/* $data */)
+    {
+        $pokemons = $this->manager->getList();
+        $this->render("indexViewPokemon", [
+            "pokemons" => $pokemons
+        ]);
+    }
+/*    public function getAllArticles ()
     {
         $blogModel = new BlogModel;
         $blogs = $blogModel->getList();
@@ -51,5 +59,5 @@ class PokemonController extends DefaultController{
         $products = $productModel->getList();
 
         $this->render("productsView", ["products" => $products]);
-    }
+    }*/
 }

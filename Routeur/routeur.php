@@ -15,15 +15,18 @@ switch ($_GET["page"]) {
         $controller = new PokemonController();
         $controller->home();
         break;
-    case 'blog':
+/*    case 'blog':
         $controller = new PokemonController();
         $controller->getAllArticles();
-        break;
-    case 'products':
+        break;*/
+ /*   case 'products':
         $controller = new PokemonController();
         $controller->getAllProducts();
+        break;*/
+    case 'allPokemons':
+        $controller = new PokemonController();
+        $controller->allPokemons(/* $_POST */);
         break;
-
     default:
         break;
 }
