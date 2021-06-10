@@ -14,7 +14,7 @@ class PokemonController extends DefaultController{
 
     public function home()
     {
-        $articles = $this->manager->getList();
+        $pokemons = $this->manager->getList();
         $this->render("indexView", [
             "pokemons" => $pokemons
         ]);
@@ -23,12 +23,12 @@ class PokemonController extends DefaultController{
     public function addPokemon(/* $data */)
     {
         if (!empty($_POST)) {
-            $article = new Pokemon();
-            $article->hydrate($_POST);
-            $this->manager->create($article);
+            $pokemon = new Pokemon();
+            $pokemon->hydrate($_POST);
+            $this->manager->create($pokemon);
             $this->redirectToRoute("home");
         }
-        $this->render("addArticle");
+        $this->render("addPokemon");
     }
 
     public function test ($param)
