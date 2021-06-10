@@ -32,26 +32,30 @@ class PokemonManager extends Manager
         // return $query->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));   
     // }
 
-    public function update($pokemon)
+    // public function update($pokemon)
+    // {
+
+    //     $statement = "UPDATE pokemon name=:name, location=:location, type=:type, hp=:hp, hasEvolve=:hasEvolve, image=:image
+    //                  WHERE id=:id";
+
+    //     $prepare = $this->db->prepare($statement);
+
+    //     $prepare->bindValue(":id", $pokemon->getID());
+    //     $prepare->bindValue(":name", $pokemon->getName());
+    //     $prepare->bindValue(":location", $pokemon->getLocation());
+    //     $prepare->bindValue(":type", $pokemon->getType());
+    //     $prepare->bindValue(":hp", $pokemon->getHp());
+    //     $prepare->bindValue(":hasEvolve", $pokemon->getHasEvolve());
+    //     $prepare->bindValue(":image", $pokemon->getImage());
+
+    //     $prepare->execute();
+
+    // }
+
+    public function update()
     {
 
-        $statement = "UPDATE pokemon name=:name, location=:location, type=:type, hp=:hp, hasEvolve=:hasEvolve, image=:image
-                     WHERE id=:id";
-
-        $prepare = $this->db->prepare($statement);
-
-        $prepare->bindValue(":id", $pokemon->getID());
-        $prepare->bindValue(":name", $pokemon->getName());
-        $prepare->bindValue(":location", $pokemon->getLocation());
-        $prepare->bindValue(":type", $pokemon->getType());
-        $prepare->bindValue(":hp", $pokemon->getHp());
-        $prepare->bindValue(":hasEvolve", $pokemon->getHasEvolve());
-        $prepare->bindValue(":image", $pokemon->getImage());
-
-        $prepare->execute();
-
     }
-
     // public function delete()
     // {
 

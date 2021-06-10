@@ -34,7 +34,7 @@ abstract class Manager implements ManagerInterface{
 
     // public abstract function getOne();
 
-    // public abstract function update();
+    //public abstract function update();
 
     // public abstract function delete();
 
