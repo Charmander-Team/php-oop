@@ -2,9 +2,7 @@
 namespace App\Controller;
 
 use App\Entity\Pokemon;
-use App\Model\BlogModel;
 use App\Model\PokemonModel;
-use App\Model\ProductModel;
 use Core\Controller\DefaultController;
 
 class PokemonController extends DefaultController{

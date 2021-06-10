@@ -13,13 +13,13 @@
 
             <tr>
                 <td><?php echo $pokemon->getId(); ?></td>
-                <td><a href="/?action=voir&id=<?php echo $pokemon->getId(); ?>"><?php echo $pokemon->getName(); ?></a></td>
+                <td><a href="/php-oop/public/index.php/?action=voir&id=<?php echo $pokemon->getId(); ?>"><?php echo $pokemon->getName(); ?></a></td>
                 <td><?php echo $pokemon->getLocation(); ?></td>
                 <td><?php echo $pokemon->getType(); ?></td>
                 <td><?php echo $pokemon->getHp(); ?></td>
                 <td><?php echo $pokemon->getHasEvolve(); ?></td>
                 <td><img src="<?php echo $pokemon->getImage(); ?>" width="100" alt=""></td>
-                <td><a href="/?page=allPokemons/?action=delete&id=<?php echo $pokemon->getId(); ?>">Delete</a></td>
+                <td><a href="/php-oop/public/index.php/?page=allPokemons/?action=delete&id=<?php echo $pokemon->getId(); ?>">Delete</a></td>
             </tr>
 
         <?php endforeach; ?>

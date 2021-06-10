@@ -1,6 +1,7 @@
 <?php
 
 use App\Controller\PokemonController;
+use App\Controller\ArticleController;
 
 if(!isset($_GET["page"])) {
     $_GET["page"] = "home";
@@ -15,10 +16,10 @@ switch ($_GET["page"]) {
         $controller = new PokemonController();
         $controller->home();
         break;
-/*    case 'blog':
-        $controller = new PokemonController();
+    case 'blog':
+        $controller = new ArticleController();
         $controller->getAllArticles();
-        break;*/
+        break;
  /*   case 'products':
         $controller = new PokemonController();
         $controller->getAllProducts();
