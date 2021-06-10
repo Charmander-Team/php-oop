@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Manager;
+namespace App\Model;
 
-use Vendor\Manager\Manager;
+use Vendor\Model\Model;
 
-class PokemonManager extends Manager
+class PokemonModel extends Model
 {
 
     protected $db;

@@ -2,7 +2,7 @@
 
 namespace Vendor\Interfaces;
 
-interface ManagerInterface {
+interface ModelInterface {
 
     public function create($article);
 

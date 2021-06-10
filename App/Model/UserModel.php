@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Manager;
+namespace App\Model;
 
-use Vendor\Manager\Manager;
+use Vendor\Model\Model;
 
-class UserManager extends Manager
+class UserModel extends Model
 {
 
     protected $db;

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Manager;
+namespace App\Model;
 
-use Vendor\Manager\Manager;
+use Vendor\Model\Model;
 
-class BlogManager extends Manager
+class BlogModel extends Model
 {
     protected $db;
     protected $table = "blog";

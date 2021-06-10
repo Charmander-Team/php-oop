@@ -6,27 +6,27 @@ require ROOT."/Vendor/Autoload.php";
 Vendor\Autoload::register();
 
 use App\Entity\Pokemon;
-use App\Manager\PokemonManager;
-use App\Manager\UserManager;
-use App\Manager\BlogManager;
-use App\Manager\ProductManager;
+use App\Model\PokemonModel;
+use App\Model\UserModel;
+use App\Model\BlogModel;
+use App\Model\ProductModel;
 
-$pokemonManager = new PokemonManager();
-var_dump($pokemonManager->getList());
+$pokemonModel = new PokemonModel();
+var_dump($pokemonModel->getList());
 echo "<br>";echo "<br>";echo "<br>";
-//var_dump($pokemonManager->getListByType('fire'));
+//var_dump($pokemonModel->getListByType('fire'));
 //echo "<br>";echo "<br>";echo "<br>";
 
-$userManager = new UserManager();
-var_dump($userManager->getList());
+$userModel = new UserModel();
+var_dump($userModel->getList());
 echo "<br>";echo "<br>";echo "<br>";
 
-$blogManager = new BlogManager();
-var_dump($blogManager->getList());
+$blogModel = new BlogModel();
+var_dump($blogModel->getList());
 echo "<br>";echo "<br>";echo "<br>";
 
-$productManager = new ProductManager();
-var_dump($productManager->getList());
+$productModel = new ProductModel();
+var_dump($productModel->getList());
 echo "<br>";echo "<br>";echo "<br>";
 
 if (!empty($_POST)) {
@@ -38,13 +38,13 @@ if (!empty($_POST)) {
     ($_POST["hasEvolve"] == "on") ? ($_POST["hasEvolve"] = 1) : ($_POST["hasEvolve"] = 0);
 
     $pokemon = new Pokemon();
-    $manager = new PokemonManager();
+    $model = new PokemonModel();
     $pokemon->hydrate($_POST);
-    $manager->create($pokemon);*/
+    $Mmdel->create($pokemon);*/
 
     echo $_POST['type'];
     echo "<br>";
-    var_dump($pokemonManager->getListByType('fire'));
+    var_dump($pokemonModel->getListByType('fire'));
 
 
 } else {

@@ -1,10 +1,10 @@
 <?php
-namespace Vendor\Manager;
+namespace Vendor\Model;
 
 use Vendor\DB\Database;
-use Vendor\Interfaces\ManagerInterface;
+use Vendor\Interfaces\ModelInterface;
 
-abstract class Manager implements ManagerInterface{
+abstract class Model implements ModelInterface{
 
     protected $db;
     protected $table;
