@@ -40,7 +40,7 @@ foreach ($pokemonModel->getList() as $value){ ?>
         <td><?php echo $value->getType(); ?></td>
         <td><?php echo $value->getHp(); ?></td>
         <td><?php echo $value->getHasEvolve(); ?></td>
-        <td><?php echo $value->getImage(); ?></td>
+        <td><img src="<?php echo $value->getImage(); ?>" alt=""></td>
         <td><a href="index.php?action=update&id=<?php echo $value->getId(); ?>">Update</a></td>
         <td><a href="index.php?action=delete&id=<?php echo $value->getId(); ?>">Delete</a></td>
     </tr>
