@@ -28,6 +28,14 @@ switch ($_GET["page"]) {
         $controller = new PokemonController();
         $controller->allPokemons(/* $_POST */);
         break;
+    case 'pokemonView':
+        $controller = new PokemonController();
+        $controller->getPokemonById($_GET["id"]);
+        break;
+    case 'delete':
+        $controller = new PokemonController();
+        $controller->deletePokemon($_GET["id"]);
+        break;
     default:
         break;
 }

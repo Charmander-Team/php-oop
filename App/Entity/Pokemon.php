@@ -135,6 +135,11 @@ class Pokemon {
         $this->image = $image;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     /**
      * @return string
      */
