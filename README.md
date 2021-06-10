@@ -1,18 +1,21 @@
 # php-oop
 
+### TO ADD FUNCTIONAL DB
+
+* To create DB
 ```sql
 CREATE DATABASE oop_pokemon CHARACTER SET utf8mb4;
 ```
-```sql
-USE oop_pokemon;
+* To import DB 
+```shell
+$ mysql -uroot -p oop_pokemon < ./php-oop/Core/DB/oop_pokemon_dump_10juin.sql
 ```
-```sql
-CREATE TABLE pokemon (
-    id INT PRIMARY KEY NOT NULL,
-    name VARCHAR(255) NOT NULL,
-    location VARCHAR(255) NOT NULL,
-    type VARCHAR(255) NOT NULL,
-    pv INT NOT NULL,
-    hasEvolve BOOLEAN
-);
+
+### TO ASSOCIATE YOUR DB
+* Follow .envexample instruction 
+
+### TO INSTALL DEPENDENCIES
+```shell
+$ composer install
 ```
+
