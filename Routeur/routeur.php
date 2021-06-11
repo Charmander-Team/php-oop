@@ -10,7 +10,7 @@ if(!isset($_GET["page"])) {
 switch ($_GET["page"]) {
     case 'addPokemon':
         $controller = new PokemonController();
-        $controller->addPokemon(/* $_POST */);
+        $controller->addPokemon();
         break;
     case 'home':
         $controller = new PokemonController();
@@ -20,13 +20,8 @@ switch ($_GET["page"]) {
         $controller = new ArticleController();
         $controller->getAll("blogView", "blogs");
         break;
- /*   case 'products':
-        $controller = new PokemonController();
-        $controller->getAllProducts();
-        break;*/
     case 'allPokemons':
         $controller = new PokemonController();
-        //$controller->allPokemons(/* $_POST */);
         $controller->getAll("indexViewPokemon", "pokemons");
         break;
     case 'pokemonView':
