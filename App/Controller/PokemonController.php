@@ -12,15 +12,6 @@ class PokemonController extends DefaultController{
         $this->manager = new PokemonModel;
     }
 
-    public function home()
-    {
-/*        $pokemons = $this->manager->getList();
-        $this->render("indexView", [
-            "pokemons" => $pokemons
-        ]);*/
-        $this->render("home");
-    }
-
     public function getPokemonById($id){
         $pokemon = $this->manager->getOne($id);
         $this->render("pokemonView", ["pokemon" => $pokemon]);

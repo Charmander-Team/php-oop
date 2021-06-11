@@ -2,19 +2,20 @@
 
 use App\Controller\PokemonController;
 use App\Controller\ArticleController;
+use Core\Controller\DefaultController;
 
 if(!isset($_GET["page"])) {
     $_GET["page"] = "home";
 }
 
 switch ($_GET["page"]) {
+    case 'home':
+        $controller = new DefaultController();
+        $controller->home();
+        break;
     case 'addPokemon':
         $controller = new PokemonController();
         $controller->addPokemon();
-        break;
-    case 'home':
-        $controller = new PokemonController();
-        $controller->home();
         break;
     case 'blog':
         $controller = new ArticleController();
