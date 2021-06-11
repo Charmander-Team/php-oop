@@ -16,4 +16,20 @@ class DefaultController {
     {
         header("Location:index.php?page=$path");
     }
+
+    public function home()
+    {
+        $this->render("home");
+    }
+
+    public function getAll(string $path, $arrayEntity )
+    {
+        $model = $this->manager->getList();
+        $this->render($path, [$arrayEntity => $model]);
+    }
+
+    public function getEntityById(string $path, $id, $entity){
+        $model = $this->manager->getOne($id);
+        $this->render($path, [$entity => $model]);
+    }
 }

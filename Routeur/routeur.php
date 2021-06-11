@@ -2,35 +2,32 @@
 
 use App\Controller\PokemonController;
 use App\Controller\ArticleController;
+use Core\Controller\DefaultController;
 
 if(!isset($_GET["page"])) {
     $_GET["page"] = "home";
 }
 
 switch ($_GET["page"]) {
+    case 'home':
+        $controller = new DefaultController();
+        $controller->home();
+        break;
     case 'addPokemon':
         $controller = new PokemonController();
-        $controller->addPokemon(/* $_POST */);
-        break;
-    case 'home':
-        $controller = new PokemonController();
-        $controller->home();
+        $controller->addPokemon();
         break;
     case 'blog':
         $controller = new ArticleController();
-        $controller->getAllArticles();
+        $controller->getAll("blogView", "blogs");
         break;
- /*   case 'products':
-        $controller = new PokemonController();
-        $controller->getAllProducts();
-        break;*/
     case 'allPokemons':
         $controller = new PokemonController();
-        $controller->allPokemons(/* $_POST */);
+        $controller->getAll("indexViewPokemon", "pokemons");
         break;
     case 'pokemonView':
-        $controller = new PokemonController();
-        $controller->getPokemonById($_GET["id"]);
+        $controller = new DefaultController();
+        $controller->getEntityById("pokemonView", $_GET["id"], "pokemon");
         break;
     case 'delete':
         $controller = new PokemonController();

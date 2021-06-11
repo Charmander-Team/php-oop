@@ -22,12 +22,4 @@ class ArticleController extends DefaultController{
         }
         $this->render("addArticle");
     }
-
-    public function getAllArticles ()
-    {
-        $blogModel = new BlogModel;
-        $blogs = $blogModel->getList();
-
-        $this->render("blogView", ["blogs" => $blogs]);
-    }
 }
