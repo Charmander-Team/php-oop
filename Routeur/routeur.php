@@ -18,7 +18,7 @@ switch ($_GET["page"]) {
         break;
     case 'blog':
         $controller = new ArticleController();
-        $controller->getAllArticles();
+        $controller->getAll("blogView", "blogs");
         break;
  /*   case 'products':
         $controller = new PokemonController();
@@ -26,7 +26,8 @@ switch ($_GET["page"]) {
         break;*/
     case 'allPokemons':
         $controller = new PokemonController();
-        $controller->allPokemons(/* $_POST */);
+        //$controller->allPokemons(/* $_POST */);
+        $controller->getAll("indexViewPokemon", "pokemons");
         break;
     case 'pokemonView':
         $controller = new PokemonController();

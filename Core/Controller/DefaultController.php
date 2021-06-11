@@ -16,4 +16,10 @@ class DefaultController {
     {
         header("Location:index.php?page=$path");
     }
+
+    public function getAll(string $path, $array )
+    {
+        $model = $this->manager->getList();
+        $this->render($path, [$array => $model]);
+    }
 }
