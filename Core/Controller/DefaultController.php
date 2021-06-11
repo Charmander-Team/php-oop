@@ -1,8 +1,6 @@
 <?php
 namespace Core\Controller;
 
-use App\Model\PokemonModel;
-
 class DefaultController {
 
     public function render(string $path, array $param = [])
@@ -32,6 +30,8 @@ class DefaultController {
 
     public function getEntityById(string $path, $id, $entity){
         $model = $this->manager->getOne($id);
-        $this->render($path, [$entity => $model]);
+
+        //$this->render($path, [$entity => $model[0]]);
+        $this->render($path, [$entity => reset($model)]);
     }
 }

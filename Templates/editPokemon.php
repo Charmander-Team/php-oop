@@ -2,13 +2,13 @@
     // var_dump($pokemon);
 
     // Récupération des propriétés et stockage dans des variables
-    $id = $pokemon[0]->getId();
-    $name = $pokemon[0]->getName();
-    $location = $pokemon[0]->getLocation();
-    $type = $pokemon[0]->getType();
-    $hp = $pokemon[0]->getHp();
-    $hasEvolve = $pokemon[0]->getHasEvolve();
-    $img =  $pokemon[0]->getImage();
+    $id = $pokemon->getId();
+    $name = $pokemon->getName();
+    $location = $pokemon->getLocation();
+    $type = $pokemon->getType();
+    $hp = $pokemon->getHp();
+    $hasEvolve = $pokemon->getHasEvolve();
+    $img =  $pokemon->getImage();
     ?>
     
     <div class="row pt-5">

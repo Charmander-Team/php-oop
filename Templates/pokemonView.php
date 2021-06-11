@@ -1,14 +1,12 @@
-<?php 
-    // var_dump($pokemon);
-
+<?php
     // Récupération des propriétés et stockage dans des variables
-    $id = $pokemon[0]->getId();
-    $name = $pokemon[0]->getName();
-    $location = $pokemon[0]->getLocation();
-    $type = $pokemon[0]->getType();
-    $hp = $pokemon[0]->getHp();
-    $hasEvolve = $pokemon[0]->getHasEvolve();
-    $img =  $pokemon[0]->getImage();
+    $id = $pokemon->getId();
+    $name = $pokemon->getName();
+    $location = $pokemon->getLocation();
+    $type = $pokemon->getType();
+    $hp = $pokemon->getHp();
+    $hasEvolve = $pokemon->getHasEvolve();
+    $img =  $pokemon->getImage();
     ?>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -45,7 +43,7 @@
     <div class="card-body">
         <a href="/php-oop/public/index.php/?page=allPokemons" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
         <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#exampleModal">Book</a>
-        <a href="/php-oop/public/index.php/?page=edit&id=<?= $pokemon[0]->getId(); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
+        <a href="/php-oop/public/index.php/?page=edit&id=<?= $pokemon->getId(); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
     </div>
     </div>
 </div>
