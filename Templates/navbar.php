@@ -3,7 +3,6 @@
     <li class="nav-item">
       <a class="nav-link" href="/php-oop/public/index.php/?page=home">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png" width="50px" alt="">
-          HOME
       </a>
     </li>
       <li class="nav-item">
