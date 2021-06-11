@@ -4,7 +4,7 @@ namespace Core\Interfaces;
 
 interface ModelInterface {
 
-    public function create($article);
+    public function create($entity);
 
     public function getList();
 

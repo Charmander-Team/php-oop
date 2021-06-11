@@ -21,9 +21,4 @@ class BlogModel extends Model
 
         $prepare->execute();
     }
-
-    public function update()
-    {
-
-    }
 }
