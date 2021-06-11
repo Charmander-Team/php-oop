@@ -33,7 +33,7 @@ include('filterPokemonByType.php')
 ?>
 
 <?php if (!empty($_POST)) { ?>
-    <div><?php echo strtoupper($_POST['type']) ?></div>
+    <div><strong><?php echo strtoupper($_POST['type']) ?></strong></div>
 
     <?php $pokemons = $this->manager->getListByType($_POST['type']);?>
 
