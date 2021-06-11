@@ -8,6 +8,11 @@ if(!isset($_GET["page"])) {
     $_GET["page"] = "home";
 }
 
+// if(!isset($_POST["username"]) || !isset($_POST["password"]) ){
+//     $_POST["username"]="";
+//     $_POST["password"]="";
+// }
+
 switch ($_GET["page"]) {
     case 'home':
         $controller = new DefaultController();
@@ -33,6 +38,19 @@ switch ($_GET["page"]) {
         $controller = new PokemonController();
         $controller->deletePokemon($_GET["id"]);
         break;
+    case 'connexion':
+        $controller = new PokemonController();
+        
+        //$controller->render("connexion");
+        //if(isset($_POST["password"]))
+        // $controller->connexion($_POST["username"],$_POST["password"]);
+        $controller->connexion($_POST);
+        //else{$controller->render("connexion");}
+        break;
+    case 'deconnexion':
+            $controller = new PokemonController();
+            $controller->deconnexion();
+            break;
     default:
         break;
 }
