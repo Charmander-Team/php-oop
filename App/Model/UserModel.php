@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use Core\Model\Model;
+use App\Entity\User;
 
 class UserModel extends Model
 {
@@ -29,5 +30,26 @@ class UserModel extends Model
 
     }
 
+
+    public function checkUser($username,$password)
+    {
+        $statement = "SELECT * FROM user WHERE username=:username AND password=:password";
+        $prepare = $this->db->prepare($statement);
+        $prepare->bindValue(":username", $username);
+        $prepare->bindValue(":password", $password);
+        $prepare->execute();
+        $result= $prepare->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
+
+        //$user = new User;
+        foreach($result as $value){
+            return 
+             !is_null($value->getId()) 
+            && 
+            $value->getAdmin()
+            === "1" ? true : false;
+        }
+        //return $result->getId() > 0 && $result->getAdmin()=== 1 ? true : false; 
+        //return $result; 
+    }
 
 }

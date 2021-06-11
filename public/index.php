@@ -1,9 +1,11 @@
-<?php
-
+<?php 
+//header("Location: http://www.google.com");
 define("ROOT", dirname(__DIR__));
-
+//var_dump(dirname(__DIR__)."\Templates\connexion.php");
 require ROOT . "/Core/Autoload.php";
 Core\Autoload::register();
+
+include ROOT."/Routeur/routeur.php";
 
 use App\Entity\Pokemon;
 use App\Model\PokemonModel;
@@ -12,8 +14,9 @@ use App\Model\BlogModel;
 use App\Model\ProductModel;
 
 $pokemonModel = new PokemonModel();
-var_dump($pokemonModel->getList());
-echo "<br>";echo "<br>";echo "<br>";
+// var_dump($pokemonModel->getList());
+// echo "<br>";echo "<br>";echo "<br>";
+
 //var_dump($pokemonModel->getListByType('fire'));
 //echo "<br>";echo "<br>";echo "<br>";
 
@@ -82,7 +85,7 @@ if (!empty($_POST)) {
     var_dump($pokemonModel->getListByType($_POST['type']));*/
 
 } else {
-    require ROOT."/Templates/addPokemon.php";
+    //require ROOT."/Templates/addPokemon.php";
     //require ROOT."/Templates/filterPokemonByType.php";
 }
 
