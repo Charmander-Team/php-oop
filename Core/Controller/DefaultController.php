@@ -22,9 +22,14 @@ class DefaultController {
         $this->render("home");
     }
 
-    public function getAll(string $path, $array )
+    public function getAll(string $path, $arrayEntity )
     {
         $model = $this->manager->getList();
-        $this->render($path, [$array => $model]);
+        $this->render($path, [$arrayEntity => $model]);
+    }
+
+    public function getEntityById(string $path, $id, $entity){
+        $model = $this->manager->getOne($id);
+        $this->render($path, [$entity => $model]);
     }
 }

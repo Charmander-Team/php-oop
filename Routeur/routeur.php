@@ -26,8 +26,8 @@ switch ($_GET["page"]) {
         $controller->getAll("indexViewPokemon", "pokemons");
         break;
     case 'pokemonView':
-        $controller = new PokemonController();
-        $controller->getPokemonById($_GET["id"]);
+        $controller = new DefaultController();
+        $controller->getEntityById("pokemonView", $_GET["id"], "pokemon");
         break;
     case 'delete':
         $controller = new PokemonController();

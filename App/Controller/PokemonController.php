@@ -12,11 +12,6 @@ class PokemonController extends DefaultController{
         $this->manager = new PokemonModel;
     }
 
-    public function getPokemonById($id){
-        $pokemon = $this->manager->getOne($id);
-        $this->render("pokemonView", ["pokemon" => $pokemon]);
-    }
-
     public function deletePokemon($id){
         $this->manager->delete($id);
         header('Location: /php-oop/public/index.php/?page=allPokemons');
