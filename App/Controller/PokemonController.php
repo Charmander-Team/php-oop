@@ -31,8 +31,8 @@ class PokemonController extends DefaultController{
         }
         $this->render("addPokemon");
     }
-    public function renderEditPage($id){
-        $pokemon = $this->manager->getOne($id);
-        $this->render("editPokemon", ["pokemon" => $pokemon]);
-    }
+    // public function renderEditPage($id){
+    //     $pokemon = $this->manager->getOne($id);
+    //     $this->render("editPokemon", ["pokemon" => $pokemon]);
+    // }
 }
