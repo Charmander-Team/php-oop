@@ -29,7 +29,7 @@ class PokemonModel extends Model
 
     public function update()
     {
-
+        
     }
 
     public function getListByType($type)

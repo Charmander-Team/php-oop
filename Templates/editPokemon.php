@@ -44,8 +44,6 @@
     </ul>
     <div class="card-body">
         <a href="/php-oop/public/index.php/?page=allPokemons" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Back</a>
-        <a href="" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#exampleModal">Book</a>
-        <a href="/php-oop/public/index.php/?page=edit&id=<?= $pokemon[0]->getId(); ?>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Edit</a>
     </div>
     </div>
 </div>

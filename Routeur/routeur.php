@@ -36,6 +36,10 @@ switch ($_GET["page"]) {
         $controller = new PokemonController();
         $controller->deletePokemon($_GET["id"]);
         break;
+    case 'edit':
+        $controller = new PokemonController();
+        $controller->renderEditPage($_GET["id"]);
+    break;
     default:
         break;
 }

@@ -61,6 +61,10 @@ class PokemonController extends DefaultController{
             $pokemonModel->delete($_GET["id"]);
         }*/
     }
+    public function renderEditPage($id){
+        $pokemon = $this->manager->getOne($id);
+        $this->render("editPokemon", ["pokemon" => $pokemon]);
+    }
 /*    public function getAllArticles ()
     {
         $blogModel = new BlogModel;
