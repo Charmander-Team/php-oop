@@ -2,6 +2,7 @@
 
 use App\Controller\PokemonController;
 use App\Controller\ArticleController;
+use App\Model\PokemonModel;
 use Core\Controller\DefaultController;
 
 if(!isset($_GET["page"])) {
@@ -26,7 +27,7 @@ switch ($_GET["page"]) {
         $controller->getAll("indexViewPokemon", "pokemons");
         break;
     case 'pokemonView':
-        $controller = new DefaultController();
+        $controller = new PokemonController();
         $controller->getEntityById("pokemonView", $_GET["id"], "pokemon");
         break;
     case 'delete':
@@ -34,8 +35,9 @@ switch ($_GET["page"]) {
         $controller->deletePokemon($_GET["id"]);
         break;
     case 'edit':
-        $controller = new DefaultController();
-        $controller->getEntityById("pokemonView", $_GET["id"], "pokemon");
+        $controller = new PokemonController();
+        $controller->getEntityById("editPokemon", $_GET["id"], "pokemon");
+        $controller->updatePokemon($_POST);
     break;
     default:
         break;

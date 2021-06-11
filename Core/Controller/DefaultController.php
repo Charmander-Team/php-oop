@@ -4,10 +4,6 @@ namespace Core\Controller;
 use App\Model\PokemonModel;
 
 class DefaultController {
-    public function __construct()
-    {
-        $this->manager = new PokemonModel;
-    }
 
     public function render(string $path, array $param = [])
     {

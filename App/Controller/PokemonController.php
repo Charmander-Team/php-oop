@@ -17,7 +17,7 @@ class PokemonController extends DefaultController{
         header('Location: /php-oop/public/index.php/?page=allPokemons');
     }
 
-    public function addPokemon(/* $data */)
+    public function addPokemon()
     {
         if (!empty($_POST)) {
             $_POST["hp"] = (int)$_POST["hp"];
@@ -31,8 +31,10 @@ class PokemonController extends DefaultController{
         }
         $this->render("addPokemon");
     }
-    // public function renderEditPage($id){
-    //     $pokemon = $this->manager->getOne($id);
-    //     $this->render("editPokemon", ["pokemon" => $pokemon]);
-    // }
+    public function updatePokemon($pokemon)
+        {
+            if (!empty($_POST)) {
+                $this->manager->update($pokemon);
+            }
+        }
 }

@@ -23,13 +23,25 @@ class PokemonModel extends Model
         $prepare->bindValue(":hp", $pokemon->getHp());
         $prepare->bindValue(":hasEvolve", $pokemon->getHasEvolve());
         $prepare->bindValue(":image", $pokemon->getImage());
-
         $prepare->execute();
     }
 
-    public function update()
+    public function update($pokemon)
     {
+        $id = (int)$pokemon['id'];
+        $statement = "UPDATE pokemon
+        SET name = :name, location = :location, type = :type, hp = :hp, image = :image
+        WHERE id=:id";
         
+        $prepare = $this->db->prepare($statement);
+
+        $prepare->bindValue(":id", $id);
+        $prepare->bindValue(":name", $pokemon['name']);
+        $prepare->bindValue(":location", $pokemon['location']);
+        $prepare->bindValue(":type", $pokemon['type']);
+        $prepare->bindValue(":hp", $pokemon['hp']);
+        $prepare->bindValue(":image", $pokemon['image']);
+        $prepare->execute();
     }
 
     public function getListByType($type)

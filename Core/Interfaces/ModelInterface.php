@@ -10,7 +10,7 @@ interface ModelInterface {
 
     public function getOne($id);
 
-    public function update();
+    public function update($id);
 
     public function delete($id);
 }

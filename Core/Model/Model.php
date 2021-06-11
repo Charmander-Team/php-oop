@@ -32,7 +32,8 @@ abstract class Model implements ModelInterface{
         return $prepare->fetchAll(\PDO::FETCH_CLASS, "App\Entity\\".ucfirst($this->table));
     }
 
-    // public function update();
+    // public function update($id){
+    // }
 
     public function delete($id)
     {
